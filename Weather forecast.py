@@ -3,9 +3,9 @@ import requests
 
 def main():
     urls = [
-        'https://wttr.in/london',
-        'https://wttr.in/svo',
-        'https://wttr.in/cherepovets?lang=ru&M&u&n&q&T'
+        'https://wttr.in/Лондон?lang=ru&M&u&n&q&T',
+        'https://wttr.in/Шереметьево?lang=ru&M&u&n&q&T',
+        'https://wttr.in/Череповец?lang=ru&M&u&n&q&T'
     ]
 
     for url in urls:
