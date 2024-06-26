@@ -1,10 +1,8 @@
-from urllib.parse import urlencode
-
 import requests
 
 
 def get_weather(city):
-    base_url = "https://wttr.in/"
+    base_url = f"https://wttr.in/{city}"
     params = {
         'lang': 'ru',
         'M': '',
@@ -13,8 +11,7 @@ def get_weather(city):
         'q': '',
         'T': ''
     }
-    url = f"{base_url}{city}?{urlencode(params)}"
-    response = requests.get(url)
+    response = requests.get(base_url, params=params)
     response.raise_for_status()
     return response.text
 
