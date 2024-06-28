@@ -17,7 +17,7 @@ def get_weather(city):
 
 
 def main():
-    cities = input("Введите город(а) через пробел: ").split()
+    cities = ['Лондон', 'Шереметьево', 'Череповец']
 
     for city in cities:
         print(get_weather(city).capitalize())
