@@ -1,38 +1,51 @@
 # Description
-This Python script interacts with the VK API to either shorten URLs using VK's link shortening service or retrieve click statistics from a shortened VK link.
+
+The script prompts the user to input city names separated by spaces. For each city, it retrieves the weather information and prints it out in the console.
 
 ## Requirements
+
 - Python 3.x
-- `requests` library (`pip install requests`)
-- `python-dotenv` library (`pip install python-dotenv`)
+- `requests` library
+
+You can install the `requests` library using pip:
+```sh
+pip install requests
+```
 
 ## Usage
-1. Ensure you have Python installed along with the required libraries (`requests` and `python-dotenv`).
-2. Obtain a VK API access token and store it in a `.env` file in the script's directory with the variable name `TOKEN`.
 
-   Example `.env` file: TOKEN=your_vk_api_token_here
+1. Clone the repository or download the script file.
+2. Open a terminal and navigate to the directory containing the script.
+3. Run the script using Python:
+```sh
+python script_name.py
+```
+Replace script_name.py with the actual name of your script file.
 
-3. Run the script by executing `python script_name.py` in your terminal.
-4. Follow the prompts to either shorten a URL or retrieve click statistics for a VK short link.
+4. When prompted, enter the city names separated by spaces and press Enter. For example:
+```sh
+Enter the cities separated by a space: London Sheremetyevo Cherepovets
+```
+5. The script will fetch and display the weather information for each city.
 
 ## Example
-Assume you want to shorten a URL using VK's API:
 
-```bash
-$ python script_name.py
-Введите ссылку: https://example.com/your-long-url
-Сокращенная ссылка: https://vk.cc/abc123
-```
-##### Or, if you want to get click statistics for an existing VK short link:
-```
-$ python script_name.py
-Введите ссылку: https://vk.cc/abc123
-Количество просмотров: 1234
-```
-## Notes
-* This script assumes you have a valid VK API access token.
+```csharp
+Enter the cities separated by a space: London Sheremetyevo Cherepovets
+London:
+[Weather data for London]
 
-* It distinguishes between input URLs to either shorten them or fetch statistics based on whether they are VK short links (vk.cc).
+Sheremetyevo:
+[Weather data for Sheremetyevo]
 
-* Error handling is provided for failed API requests or invalid URLs.
-  
+Cherepovets:
+[Weather data for Cherepovets]
+```
+
+### Notes
+
+* The script uses the wttr.in service to fetch weather information. 
+Make sure you have an active internet connection while running the script.
+
+* The script is designed to handle basic errors such as invalid city names by raising an HTTP error.
+
